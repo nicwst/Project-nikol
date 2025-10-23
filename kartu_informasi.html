@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kartu Informasi</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <div class="card-fakta">
+            <img src="" alt="" id="factImage">
+            <div class="content">
+                <h2>Fakta-Fakta Menarik...</h2>
+                <p class="subtitle">Tahukah Kamu Tentang Fakta-Fakta Unik Ini</p>
+                <ul class="facts-list" id="factList ">
+                    <li>ssss</li>
+                    <li>aaaa</li>
+                    <li>aaaa</li>
+                    <li>aaaa</li>
+                </ul>
+                <button class="btn-next" id="nextFact">Fakta Selanjutnya</button>
+            </div>
+        </div>
+        <script>
+            const factData=[
+                {
+                    Image:"",
+                    fact:[
+                        "aaaa",
+                        "aaaa",
+                        "aaaa",
+                        "aaaa",
+                    ]
+                },
+                {
+                    Image:"",
+                    fact:[
+                        "aaaa",
+                        "aaaa",
+                        "aaaa",
+                        "aaaa",
+                    ]
+                },
+                {
+                    Image:"",
+                    fact:[
+                        "aaaa",
+                        "aaaa",
+                        "aaaa",
+                        "aaaa",
+                    ]
+                },
+                {
+                    Image:"",
+                    fact:[
+                        "aaaa",
+                        "aaaa",
+                        "aaaa",
+                        "aaaa",
+                    ]
+                }
+            ];
+
+            const factList = document.getElementById("factlist");
+            const factImage = document.getElementById("factimage");
+            const nextBtn = document.getElementById("nextfact");
+
+            nextBtn.addEventListener("click", () => {
+      factList.classList.add("fade-out");
+      setTimeout(() => {
+        const randomFact = factData[Math.floor(Math.random() * factData.length)];
+        factImage.style.opacity = 0;
+
+        setTimeout(() => {
+          factImage.src = randomFact.image;
+          factImage.style.opacity = 1;
+        }, 400);
+
+        factList.innerHTML = randomFact.facts.map(f => `<li>${f}</li>`).join("");
+        factList.classList.remove("fade-out");
+      }, 500);
+    });
+        </script>
+    </body>
+</html>
