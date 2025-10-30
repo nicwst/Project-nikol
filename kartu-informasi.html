@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kartu Fakta Menarik — Pomeranian</title>
+  <style>
+    div.card-fakta{
+            width: 800px;
+            height: 950px;
+            background-color: aliceblue;
+            text-align: center;
+            border-radius: 25%;
+        }
+            body {
+        background-color: #cee6fa;
+        padding: 40px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      img.foto{
+        width: 180px;
+        height: 275px;
+        border-radius: 10% 30% 50% 70%;
+       }
+       img.foto:hover{
+        width: 180px;
+        height: 250px;
+        box-shadow: 10px 10px 5px antiquewhite;
+       }
+  </style>
+</head>
+<body>
+<center>
+  <div class="card-fakta">
+    <img id="factImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpPSTCyRtZ-i5DTOpHFs2SwdlecfnFmSn68w&s" alt="POM" />
+    <div class="content">
+      <h2>Fakta Menarik tentang Pomeranian</h2>
+      <p class="subtitle">Tahukah kamu fakta-fakta unik ini?</p>
+
+      <ul class="facts-list" id="factList">
+        <li>Asalnya dari Eropa Utara, Pomeranian berasal dari daerah Pomerania (antara Jerman dan Polandia).
+        </li>
+        <li>Dulunya anjing bangsawan, Ratu Victoria punya Pomeranian bernama “Marco,” dan berkatnya ras ini jadi terkenal di seluruh dunia.
+        </li>
+        <li>Ukuran mungil, hati besar, Beratnya hanya sekitar 1,5-3 kg, tapi mereka punya kepribadian berani seperti anjing besar.
+        </li>
+        <li>Cerdas dan cepat belajar, Pomeranian termasuk anjing pintar yang bisa dilatih berbagai trik.
+        </li>
+      </ul>
+
+      <button class="btn-next" id="nextFact">🔁 Fakta Selanjutnya</button>
+
+      <div class="card-footer">© 2025 | Fakta Unik • Informatika</div>
+    </div>
+  </div>
+
+  <script>
+    const factData = [
+      {
+        image: "https://www.shutterstock.com/image-photo/closeup-portrait-red-pomeranian-spitz-260nw-1469723066.jpg",
+        facts: [
+        "Sering jadi bintang media sosial, Banyak Pomeranian terkenal di internet, seperti *Boo*, yang dijuluki “anjing paling imut di dunia.”",
+        "Suka main dan penuh energi, Mereka butuh aktivitas harian untuk menjaga kesehatan fisik dan mentalnya.",
+        "Umur panjang,  Rata-rata bisa hidup 12–16 tahun dengan perawatan baik.",
+        "Suka jadi pusat perhatian, Mereka senang bila dipuji dan sering menunjukkan sikap manja untuk menarik perhatian.",
+        ]
+      },
+      {
+        image: "https://www.charmcitypoms.com/pb/content/images/xlarge/1022.jpg",
+        facts: [
+        "Dulunya lebih besar, Pomeranian dulu beratnya sekitar 13 kg, tapi dikembangbiakkan agar makin kecil dan imut.",
+        "Sangat setia, Mereka bisa sangat terikat dengan satu orang tertentu dan selalu ingin dekat.",
+        "Cocok untuk hidup di apartemen, Ukurannya kecil dan energinya bisa tersalurkan lewat bermain di dalam rumah.",
+        "Bulu mereka membantu mengatur suhu tubuh, Meskipun tebal, bulu itu berfungsi melindungi dari panas dan dingin.",
+        ]
+      },
+      {
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp__CxkyIu3gUOJ7Tz8BKYLXOuScRwSew0eg&s",
+        facts: [
+        "Punya naluri penjaga, Walau kecil, mereka berani menggonggong untuk melindungi rumah.",
+        "Termasuk ras spitz, Masih berkerabat dengan Samoyed, Husky, dan Alaskan Malamute.",
+        "Tidurnya bisa lama, Pomeranian bisa tidur 12–14 jam sehari, terutama anak anjingnya.",
+        "Mudah beradaptasi, Mereka cepat menyesuaikan diri dengan lingkungan baru dan orang baru.",
+        ]
+      },
+      {
+        image: "data:image/jpeg;base64,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",
+        facts: [
+        "Sering jadi bintang media sosial, Banyak Pomeranian terkenal di internet, seperti *Boo*, yang dijuluki “anjing paling imut di dunia.”",
+                        "Suka main dan penuh energi, Mereka butuh aktivitas harian untuk menjaga kesehatan fisik dan mentalnya.",
+                        "Umur panjang,  Rata-rata bisa hidup 12–16 tahun dengan perawatan baik.",
+                        "Suka jadi pusat perhatian, Mereka senang bila dipuji dan sering menunjukkan sikap manja untuk menarik perhatian.",
+        ]
+      }
+    ];
+
+    const factList = document.getElementById("factList");
+    const factImage = document.getElementById("factImage");
+    const nextBtn = document.getElementById("nextFact");
+
+    nextBtn.addEventListener("click", () => {
+      factList.classList.add("fade-out");
+      setTimeout(() => {
+        const randomFact = factData[Math.floor(Math.random() * factData.length)];
+        factImage.style.opacity = 0;
+
+        setTimeout(() => {
+          factImage.src = randomFact.image;
+          factImage.style.opacity = 1;
+        }, 400);
+
+        factList.innerHTML = randomFact.facts.map(f => `<li>${f}</li>`).join("");
+        factList.classList.remove("fade-out");
+      }, 500);
+    });
+  </script>
+</center>
+</body>
+</html>
